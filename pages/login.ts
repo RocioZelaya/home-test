@@ -61,7 +61,7 @@ export class LoginPage extends BasePage {
    */
   async getWelcomeMessage(): Promise<string | null> {
     try {
-      return await this.getText(this.welcomeMessage);
+      return this.getText(this.welcomeMessage);
     } catch (error) {
       throw new Error(`Failed to get welcome message: ${error instanceof Error ? error.message : 'Unknown error'}`);
     }
@@ -74,7 +74,7 @@ export class LoginPage extends BasePage {
    */
   async getErrorMessage(): Promise<string | null> {
     try {
-      return await this.getText(this.errorMessage);
+      return this.getText(this.errorMessage);
     } catch (error) {
       throw new Error(`Failed to get error message: ${error instanceof Error ? error.message : 'Unknown error'}`);
     }

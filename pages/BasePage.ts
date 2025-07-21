@@ -97,7 +97,7 @@ export class BasePage {
    */
   async isVisible(locator: Locator): Promise<boolean> {
     try {
-      return await locator.isVisible();
+      return locator.isVisible();
     } catch (error) {
       throw new Error(`Failed to check if element is visible: ${error instanceof Error ? error.message : 'Unknown error'}`);
     }

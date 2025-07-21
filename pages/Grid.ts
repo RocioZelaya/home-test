@@ -61,7 +61,7 @@ export class GridPage extends BasePage {
     try {
       const item = this.getMenuItemByPosition(position);
       const nameElement = item.locator('[data-test-id="item-name"]');
-      return await this.getText(nameElement);
+      return this.getText(nameElement);
     } catch (error) {
       throw new Error(`Failed to get menu item name at position ${position}: ${error instanceof Error ? error.message : 'Unknown error'}`);
     }
@@ -77,7 +77,7 @@ export class GridPage extends BasePage {
     try {
       const item = this.getMenuItemByPosition(position);
       const priceElement = item.locator('#item-price');
-      return await this.getText(priceElement);
+      return this.getText(priceElement);
     } catch (error) {
       throw new Error(`Failed to get menu item price at position ${position}: ${error instanceof Error ? error.message : 'Unknown error'}`);
     }
@@ -90,7 +90,7 @@ export class GridPage extends BasePage {
    */
   async getAllMenuItems(): Promise<Locator[]> {
     try {
-      return await this.menuItem.all();
+      return this.menuItem.all();
     } catch (error) {
       throw new Error(`Failed to get all menu items: ${error instanceof Error ? error.message : 'Unknown error'}`);
     }

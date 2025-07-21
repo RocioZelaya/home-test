@@ -151,7 +151,7 @@ export class CheckoutPage extends BasePage {
   async getOrderConfirmationNumber(): Promise<string | null> {
     try {
       await this.waitForElement(this.orderConfirmationOrderNumber);
-      return await this.getText(this.orderConfirmationOrderNumber);
+      return this.getText(this.orderConfirmationOrderNumber);
     } catch (error) {
       throw new Error(`Failed to get order confirmation number: ${error instanceof Error ? error.message : 'Unknown error'}`);
     }
@@ -193,7 +193,7 @@ export class CheckoutPage extends BasePage {
    */
   async isAlertVisible(): Promise<boolean> {
     try {
-      return await this.alertDialog.isVisible();
+      return this.alertDialog.isVisible();
     } catch (error) {
       throw new Error(`Failed to check if alert dialog is visible: ${error instanceof Error ? error.message : 'Unknown error'}`);
     }

@@ -57,7 +57,7 @@ export class SearchPage extends BasePage {
         return text !== 'searching...' && text.trim() !== '';
       });
       
-      return await this.getText(this.searchResults);
+      return this.getText(this.searchResults);
     } catch (error) {
       throw new Error(`Failed to get search results: ${error instanceof Error ? error.message : 'Unknown error'}`);
     }

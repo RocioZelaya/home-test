@@ -43,7 +43,7 @@ cd home-test-main
 ## Running Playwright Tests in Docker
 
 
-1. **Build the Docker image:**
+1. **Build the Docker image(optional):**
    ```
    docker build -t home-test-playwright .
    ```

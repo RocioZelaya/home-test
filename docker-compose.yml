@@ -1,0 +1,12 @@
+services:
+  demo-app:
+    image: automaticbytes/demo-app
+    ports:
+      - "3100:3100"
+  tests:
+    build: .
+    depends_on:
+      - demo-app
+    environment:
+      - BASE_URL=http://demo-app:3100
+    entrypoint: ["/bin/sh", "-c", "npx wait-on http://demo-app:3100 && npx playwright test"] 

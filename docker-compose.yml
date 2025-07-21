@@ -1,7 +1,6 @@
 services:
   demo-app:
     image: automaticbytes/demo-app:latest
-    platform: linux/arm64
     ports:
       - 3100:3100
     healthcheck:

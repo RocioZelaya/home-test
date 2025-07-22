@@ -37,6 +37,7 @@ cd home-test-main
    ```
    npx playwright test --ui
    ```
+   In a new console, run this command while the demo app is up and running.
 5. **(Optional) View the HTML report:**
     ```
     npx playwright show-report

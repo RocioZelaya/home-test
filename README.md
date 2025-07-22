@@ -37,21 +37,36 @@ cd home-test-main
    ```
    npx playwright test --ui
    ```
-
+5. **(Optional) View the HTML report:**
+    ```
+    npx playwright show-report
+    ```
 ---
 
 ## Running Playwright Tests in Docker
 
+**Note:** Because the demo app only listens on localhost inside its container, you must start it separately and the tests will connect to it using `host.docker.internal`.
 
-1. **Build the Docker image(optional):**
+1. **Start the demo app container:**
    ```
-   docker build -t home-test-playwright .
+   docker run -p 3100:3100 automaticbytes/demo-app
    ```
-2. **Run the tests:**
+
+2. **Run the Playwright tests in Docker:**
    ```
-   docker compose up --build --abort-on-container-exit
+   docker compose up --build tests
    ```
+   In a new console, run this command while the demo app is up and running.
+
 3. **(Optional) View the HTML report:**
-    To view the HTML report, navigate to the localhost directory mentioned in the console once the tests finish running.
+    ```
+    npx playwright show-report
+    ```
 
 ---
+
+## Important Note
+
+Before running any Docker commands, ensure that Docker Desktop (or the Docker daemon) is installed and running on your machine.
+- [Download Docker Desktop](https://www.docker.com/products/docker-desktop/)
+- After installation, open Docker Desktop and wait for it to indicate that Docker is running (look for the whale icon in your system tray).

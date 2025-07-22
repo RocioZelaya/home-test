@@ -10,9 +10,8 @@ services:
       retries: 10
   tests:
     build: .
-    depends_on:
-      demo-app:
-        condition: service_healthy
     environment:
-      - BASE_URL=http://demo-app:3100
-    entrypoint: ["/bin/sh", "-c", "npx wait-on http://demo-app:3100 && npx playwright test"] 
+      - BASE_URL=http://host.docker.internal:3100
+    tty: true
+    stdin_open: true
+    command: /bin/sh -c "npx wait-on $BASE_URL && npx playwright test" 

@@ -30,6 +30,7 @@ cd home-test-main
    docker run -p 3100:3100 automaticbytes/demo-app
    ```
 4. **Run the tests:**
+   In a new console, run this command while the demo app is up and running.
    ```
    npx playwright test
    ```
@@ -37,7 +38,6 @@ cd home-test-main
    ```
    npx playwright test --ui
    ```
-   In a new console, run this command while the demo app is up and running.
 5. **(Optional) View the HTML report:**
     ```
     npx playwright show-report
@@ -54,10 +54,10 @@ cd home-test-main
    ```
 
 2. **Run the Playwright tests in Docker:**
+   In a new console, run this command while the demo app is up and running.
    ```
    docker compose up --build tests
    ```
-   In a new console, run this command while the demo app is up and running.
 
 3. **(Optional) View the HTML report:**
     ```
